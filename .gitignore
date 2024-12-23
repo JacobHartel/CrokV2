@@ -38,4 +38,5 @@ obj/
 _TestResults/
 _ReSharper*/
 *.resharper
-*.sln.docstates
+*.sln.docstate
+APIStuffs

@@ -28,37 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.BackColor = Color.LightGray;
-            this.Text = "Crokv2";
-
-            System.Windows.Forms.Button crok = new System.Windows.Forms.Button();
-            crok.Location = new System.Drawing.Point(350, 150);
-            crok.Size = new System.Drawing.Size(100, 50);
-            crok.BackColor = System.Drawing.Color.DarkGray;
+            _clipBoardText = new ClipBoardText();
+            crok = new Button();
+            clipPreviewBox = new TextBox();
+            outputText = new TextBox();
+            SuspendLayout();
+            // 
+            // crok button
+            // 
+            crok.BackColor = Color.DarkGray;
+            crok.Location = new Point(350, 150);
+            crok.Name = "crok";
+            crok.Size = new Size(100, 50);
+            crok.TabIndex = 0;
             crok.Text = "Crok It";
-            this.Controls.Add(crok);
-
-            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
-            textBox.Location = new System.Drawing.Point(300, 50);
-            textBox.Size = new System.Drawing.Size(200, 200);
-            textBox.ReadOnly = true;
-            textBox.ForeColor = System.Drawing.Color.Black;
-            textBox.Text = "Copy Paste History Here";
-            this.Controls.Add(textBox);
-
-            System.Windows.Forms.TextBox outputText = new System.Windows.Forms.TextBox();
-            outputText.Location = new System.Drawing.Point(200, 300);
-            outputText.Size = new System.Drawing.Size(400, 200);
-            outputText.ReadOnly = false;
-            outputText.ForeColor = System.Drawing.Color.Black;
+            crok.UseVisualStyleBackColor = false;
+            crok.Click += (sender, e) => CrokButton_Click(_clipBoardText);
+            // 
+            // clipPreviewBox
+            // 
+            clipPreviewBox.BackColor = Color.LightGray;
+            clipPreviewBox.BorderStyle = BorderStyle.None;
+            clipPreviewBox.ForeColor = Color.Black;
+            clipPreviewBox.Location = new Point(250, 47);
+            clipPreviewBox.Multiline = true;
+            clipPreviewBox.Name = "clipPreviewBox";
+            clipPreviewBox.ReadOnly = true;
+            clipPreviewBox.Size = new Size(300, 75);
+            clipPreviewBox.TabIndex = 1;
+            clipPreviewBox.Text = "Copy Paste History Here";
+            clipPreviewBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // outputText
+            // 
+            outputText.BackColor = Color.LightGray;
+            outputText.BorderStyle = BorderStyle.None;
+            outputText.ForeColor = Color.Black;
+            outputText.Location = new Point(200, 300);
+            outputText.Name = "outputText";
+            outputText.Size = new Size(400, 27);
+            outputText.TabIndex = 2;
             outputText.Text = "Prompt Response Here";
-            this.Controls.Add(outputText);
-
+            outputText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightGray;
+            ClientSize = new Size(800, 450);
+            Controls.Add(crok);
+            Controls.Add(clipPreviewBox);
+            Controls.Add(outputText);
+            Name = "Form1";
+            Text = "Crokv2";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button crok;
+        private TextBox clipPreviewBox;
+        private TextBox outputText;
+
+
+        private void CrokButton_Click(string _clipBoardText)
+        {
+            //will do the logic after I set this
+            string variable = _clipBoardText;
+            outputText.Text = $"{variable}";
+        }
+
     }
 }
+
