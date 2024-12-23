@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            _clipBoardText = new ClipBoardText();
+            
+
             crok = new Button();
             clipPreviewBox = new TextBox();
             outputText = new TextBox();
@@ -43,7 +44,7 @@
             crok.TabIndex = 0;
             crok.Text = "Crok It";
             crok.UseVisualStyleBackColor = false;
-            crok.Click += (sender, e) => CrokButton_Click(_clipBoardText);
+            crok.Click += (sender, e) => CrokButton_Click(placeholder); //will add this later should have planned this out better 
             // 
             // clipPreviewBox
             // 
@@ -91,13 +92,12 @@
         private Button crok;
         private TextBox clipPreviewBox;
         private TextBox outputText;
+        private string placeholder; //this is for the click event above in button styling
 
 
-        private void CrokButton_Click(string _clipBoardText)
+        private void CrokButton_Click(string _clipBoardText)//will probably arrange all of this tomorrow 12/23/24
         {
-            //will do the logic after I set this
-            string variable = _clipBoardText;
-            outputText.Text = $"{variable}";
+            
         }
 
     }

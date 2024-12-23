@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace CrokV2
-{ 
-
-    public class ApiHelper
+{
+    public class ClipBoard
     {
-        //not sure how I'm going to go about all of this yet need to sleep on it
+        public string[] ClipBoardList { get; set; } 
 
-        
+        public string SendToPrompt { get; set; }
     }
 }
