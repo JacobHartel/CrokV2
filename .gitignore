@@ -1,0 +1,41 @@
+# Ignore Visual Studio temporary files, build results, and
+# build directories
+*.user
+*.suo
+*.log
+*.obj
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.idb
+*.ipch
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.opt
+*.plg
+*.vbw
+*.userosscache
+*.tlog
+*.vs
+.vscode/
+
+# Ignore build directories
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+
+# Ignore packages folder
+*.nuget/
+
+# Ignore other folders
+_TestResults/
+_ReSharper*/
+*.resharper
+*.sln.docstates
